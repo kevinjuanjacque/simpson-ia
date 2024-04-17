@@ -11,15 +11,12 @@ export default function HomePage() {
   const handleSumbit =async (state:unknown,formdata:FormData)=>{
     
     let character = await createCharacter(formdata);
-    console.log(character.id);
     const id = character.id;
     while(character.status !== "succeeded"){
       character = await getCharacter(id);
-      console.log(character);
-      
+      console.log(character.id,id)
       await new Promise((resolve) => setTimeout(resolve, 4000));
     }
-    console.log(character);
     return character
   }
   const [state,formAction]=useFormState(handleSumbit,null)
@@ -28,7 +25,7 @@ export default function HomePage() {
     {
       state && <ShowResult src={state.output[0]}  />
       }
-      <form action={formAction} className="flex flex-col gap-2 p-5">
+      <form action={formAction} className="flex flex-col gap-2 py-5">
       <ContentForm />
     </form>
   </section>;

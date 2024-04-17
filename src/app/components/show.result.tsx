@@ -17,7 +17,7 @@ export const ShowResult = ({src}:{src:string}) => {
           { type: "image/*" }
         );
         element.href = URL.createObjectURL(file);
-        element.download = "image.jpg";
+        element.download = "image.png";
         element.click();
       };
   return (
