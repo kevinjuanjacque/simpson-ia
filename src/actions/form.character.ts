@@ -14,7 +14,7 @@ cloudinary.config({
 });
 
 
-export async function createCharacter(state:any,formData: FormData) {
+export async function createCharacter(state:unknown,formData: FormData) {
 
   const imageUrl = await fetch(
     `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD}/image/upload?upload_preset=ml_default&folder=${process.env.CLOUDINARY_FOLDER}`,
