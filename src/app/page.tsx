@@ -12,7 +12,7 @@ export default function HomePage() {
     
     let character = await createCharacter(formdata);
     const id = character.id;
-    while(character.status !== "succeeded"){
+    while(["starting","processing"].includes(character.status)){
       character = await getCharacter(id);
       console.log(character.id,id)
       await new Promise((resolve) => setTimeout(resolve, 4000));

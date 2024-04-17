@@ -20,9 +20,13 @@ export const ShowResult = ({src}:{src:string}) => {
         element.download = "image.png";
         element.click();
       };
+
+      if(src==""){
+          return <div>No lo logramos</div>
+      }
   return (
     <div className="flex flex-col gap-2  items-center">
-        <img src={src} alt="Imagen resultante" />
+        <img className="w-full" src={src} alt="Imagen resultante" />
         
         
         <Button className="w-full max-w-[800px]" onClick={() => download()}>Descargar</Button>
