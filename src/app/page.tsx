@@ -27,7 +27,7 @@ export default function HomePage() {
       character = await getCharacter(id);
       console.log(character.id,id)
       setResultados(prev=>[...prev,character.status])
-      await new Promise((resolve) => setTimeout(resolve, 4000));
+      await new Promise((resolve) => setTimeout(resolve, 12000));
     }
     return character
   }
