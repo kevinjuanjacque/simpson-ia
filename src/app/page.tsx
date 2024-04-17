@@ -27,7 +27,9 @@ export default function HomePage() {
       character = await getCharacter(id);
       console.log(character.id,id)
       setResultados(prev=>[...prev,character.status])
-      await new Promise((resolve) => setTimeout(resolve, 12000));
+      if(character.status!=="succeeded"){
+        await new Promise((resolve) => setTimeout(resolve, 12000));
+      }
     }
     return character
   }
@@ -45,14 +47,10 @@ export default function HomePage() {
       <TableHeader>
         <TableRow>
           <TableHead>Intento</TableHead>
-          <TableHead>Result</TableHead>
+          <TableHead>Estado</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell>example</TableCell>
-          <TableCell>expample</TableCell>
-        </TableRow>
         {Resultados.map((result, index) => (
         <React.Fragment key={index+result}>
           <TableRow>
