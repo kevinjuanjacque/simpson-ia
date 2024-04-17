@@ -26,7 +26,7 @@ export const ShowResult = ({src}:{src:string}) => {
       }
   return (
     <div className="flex flex-col gap-2  items-center">
-        <img className="w-full" src={src} alt="Imagen resultante" />
+        <img className="w-[80%] aspect-square" src={src} alt="Imagen resultante" />
         
         
         <Button className="w-full max-w-[800px]" onClick={() => download()}>Descargar</Button>

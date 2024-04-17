@@ -10,7 +10,7 @@ export const ContentForm = () => {
     const {pending}=useFormStatus()
   return (
     <>
-    {pending && <Skeleton className="w-full h-[800px] rounded-sm" />}
+    {pending && <Skeleton className="w-full max-h-[800px]  aspect-square rounded-sm" />}
     <Input required type="file" alt="foto de perfil" name="image" />
     <Textarea placeholder="Escribe los props, ej: shirt, hair gray and eyes blue, Similar to bart"  name="props"/>
     <Button disabled={pending}>{pending ?"Generando imagen..." :  "Generar imagen"}</Button></>
