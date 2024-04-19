@@ -17,7 +17,7 @@ export const ShowResult = ({src}:{src:string}) => {
           { type: "image/*" }
         );
         element.href = URL.createObjectURL(file);
-        element.download = "image.png";
+        element.download = "image.jpg";
         element.click();
       };
 
@@ -29,7 +29,7 @@ export const ShowResult = ({src}:{src:string}) => {
         <img className="w-[80%] aspect-square" src={src} alt="Imagen resultante" />
         
         
-        <Button className="w-full max-w-[800px]" onClick={() => download()}>Descargar</Button>
+        {/* <Button className="w-full max-w-[800px]" onClick={() => download()}>Descargar</Button> */}
       
         <div className="h-[1px] w-full bg-gray-800 my-5" />
 
