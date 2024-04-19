@@ -21,7 +21,7 @@ export async function createCharacter(formData: FormData) {
       body: formData.get('image') as File,
     },
   ).then((res) => res.json()).then((res) =>{
-    return res.secure_url});
+    return res.secure_url}).catch(e=>console.log(e));
     
 
     const output = await fetch("https://replicate.com/api/models/fofr/sdxl-simpsons-characters/versions/f4d36a72b43ea2fd511cab0afb32539955ee5b28b65c8e3fb7d8abd254be8e91/predictions", {
@@ -45,7 +45,7 @@ export async function createCharacter(formData: FormData) {
           "input": {
             "width": 800,
             "height": 800,
-            "prompt": "A TOK Simpsons character, "+formData.get('props') as string,
+            "prompt": "Generate a new character inspired by the style of The Simpsons. Take into account whether the person in the image is a child or an adult when creating the character. The character should have recognizable features from The Simpsons universe, such as the head shape, large and round eyes, and a vibrant color palette typical of the series. Make sure to capture the humorous and caricatured essence that defines The Simpsons characters, good definition, 4k, "+formData.get('props') as string,
             "refine": "expert_ensemble_refiner",
             "scheduler": "K_EULER",
             "lora_scale": 0.6,
@@ -55,7 +55,7 @@ export async function createCharacter(formData: FormData) {
             "high_noise_frac": 0.8,
             "negative_prompt": "ugly, broken, distorted, artefacts, 3D, render, photography",
             "prompt_strength": 0.8,
-            "num_inference_steps": 30,
+            "num_inference_steps": 50,
             "image": imageUrl as string
           },
           "stream": false
