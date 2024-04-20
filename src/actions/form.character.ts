@@ -35,8 +35,8 @@ export async function createCharacter(formData: FormData) {
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "x-csrftoken": "UVLrcRyCRaotT8xVbMX32NFqKLz12HQh",
-        "cookie": "rl_page_init_referrer=RS_ENC_v3_Imh0dHBzOi8vd3d3LmJpbmcuY29tLyI%3D; rl_page_init_referring_domain=RS_ENC_v3_Ind3dy5iaW5nLmNvbSI%3D; rl_session=RS_ENC_v3_eyJpZCI6MTcxMzM1OTkxNDk0OSwiZXhwaXJlc0F0IjoxNzEzMzYxNzE0OTYxLCJ0aW1lb3V0IjoxODAwMDAwLCJzZXNzaW9uU3RhcnQiOnRydWUsImF1dG9UcmFjayI6dHJ1ZX0%3D; replicate_anonymous_id=a748c9d2-9fed-43c3-9e08-d4ae7c343376; csrftoken=UVLrcRyCRaotT8xVbMX32NFqKLz12HQh; sessionid=apjcvlupjdt7eulcds8eircjt0znlji8; rs_ga=GA1.1.a748c9d2-9fed-43c3-9e08-d4ae7c343376; rs_ga_CY22PWXDRL=GS1.1.1713359914949.1.1.1713359937.0.0.0; rl_trait=RudderEncrypt%3AU2FsdGVkX18r5X3ZCcNInDFLSeavJeVFKxX1BoBTp4E%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX1%2FnUfG2hcROzCOopaiEkK0JUVswjIDyDgs%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX18weIFVbKTAP8lA5uoxpYGFI6my6GWMUcQ%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2FWxoD8NxcOEbwYgB2UsxqZcpxsD1OUsecCgHQ0DD8O6YaPBKB4yg0K%2Boxish6FAwSMk%2FG9kEy0BA%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2FtCT5mNEKmHgbCNkcWb%2FB%2BmySh0WBl8BU%3D",
+        "x-csrftoken": process.env.SRFTOKEN as string,
+        "cookie": process.env.COOKIE as string,
         "Referer": "https://replicate.com/fofr/sdxl-simpsons-characters",
         "Referrer-Policy": "same-origin"
       },
@@ -86,7 +86,7 @@ export async function getCharacter(id: string) {
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "cookie": "rl_page_init_referrer=RS_ENC_v3_Imh0dHBzOi8vd3d3LmJpbmcuY29tLyI%3D; rl_page_init_referring_domain=RS_ENC_v3_Ind3dy5iaW5nLmNvbSI%3D; rl_session=RS_ENC_v3_eyJpZCI6MTcxMzM1OTkxNDk0OSwiZXhwaXJlc0F0IjoxNzEzMzYxNzE0OTYxLCJ0aW1lb3V0IjoxODAwMDAwLCJzZXNzaW9uU3RhcnQiOnRydWUsImF1dG9UcmFjayI6dHJ1ZX0%3D; replicate_anonymous_id=a748c9d2-9fed-43c3-9e08-d4ae7c343376; csrftoken=UVLrcRyCRaotT8xVbMX32NFqKLz12HQh; sessionid=apjcvlupjdt7eulcds8eircjt0znlji8; rs_ga=GA1.1.a748c9d2-9fed-43c3-9e08-d4ae7c343376; rs_ga_CY22PWXDRL=GS1.1.1713359914949.1.1.1713359937.0.0.0; rl_trait=RudderEncrypt%3AU2FsdGVkX18r5X3ZCcNInDFLSeavJeVFKxX1BoBTp4E%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX1%2FnUfG2hcROzCOopaiEkK0JUVswjIDyDgs%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX18weIFVbKTAP8lA5uoxpYGFI6my6GWMUcQ%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2FWxoD8NxcOEbwYgB2UsxqZcpxsD1OUsecCgHQ0DD8O6YaPBKB4yg0K%2Boxish6FAwSMk%2FG9kEy0BA%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2FtCT5mNEKmHgbCNkcWb%2FB%2BmySh0WBl8BU%3D",
+        "cookie": process.env.COOKIE as string,
         "Referer": `https://replicate.com/fofr/sdxl-simpsons-characters?prediction=${id}`,
         "Referrer-Policy": "same-origin"
       },
